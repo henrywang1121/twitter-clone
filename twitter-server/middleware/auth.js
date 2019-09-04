@@ -1,4 +1,5 @@
-require('dotenv').config();
+//require('dotenv').config();
+require('dotenv').config({path: __dirname + '/.env'});
 const jwt = require('jsonwebtoken');
 
 //Authentication - Ensure the user is logged in
