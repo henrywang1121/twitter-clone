@@ -2,19 +2,19 @@ import {apiCall} from '../../services/api';
 import {addError} from './errors';
 import {LOAD_MESSAGES, REMOVE_MESSAGE} from '../actionTypes';
 
-export const loadMessages = message => ({
+export const loadMessages = messages => ({
     type: LOAD_MESSAGES,
-    message
+    messages
 });
 
 export const fetchMessages = () => {
     return dispatch => {
-        return apiCall('GET', '/api/messages')
+        return apiCall('get', '/api/messages')
                 .then((res) => 
                     dispatch(loadMessages(res))
                 )
                 .catch(err => 
-                    addError(err.message)
+                    dispatch(addError(err.message))
                 );
     }
 }

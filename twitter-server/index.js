@@ -1,5 +1,6 @@
 //require('dotenv').config(); //process.env.______
 require('dotenv').config({path: __dirname + '/.env'});
+const db = require('./models');
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -8,7 +9,6 @@ const errorHandler = require('./handlers/error');
 const authRoutes = require('./routes/auth');
 const messagesRoutes = require('./routes/messages');
 const {loginRequired, ensureCorrectUser} = require('./middleware/auth');
-
 const PORT = 8081;
 
 app.use(cors());
