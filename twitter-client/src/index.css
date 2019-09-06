@@ -53,3 +53,13 @@ ul.nav.navbar-nav li {
   color: white;
   text-shadow: 0 0 5px rgb(20, 226, 113);
 }
+
+#messages .list-group-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 18px 12px
+}
+
+#messages:not(.no-hover) .list-group-item:hover {
+  background-color: #e6ecf0;
+}
